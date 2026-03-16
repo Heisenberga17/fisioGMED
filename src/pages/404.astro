@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Página No Encontrada — FisioGMED"
+  description="La página que buscas no existe. Vuelve al inicio de FisioGMED."
+>
+  <Navbar client:load />
+
+  <main class="flex-1 flex items-center justify-center py-32">
+    <div class="text-center px-4">
+      <p class="text-8xl font-heading text-accent mb-4">404</p>
+      <h1 class="text-3xl md:text-4xl font-heading text-navy mb-4">
+        Página No Encontrada
+      </h1>
+      <p class="text-body text-lg mb-8 max-w-md mx-auto">
+        Lo sentimos, la página que buscas no existe o ha sido movida.
+      </p>
+      <a
+        href="/"
+        class="inline-block bg-accent hover:bg-accent-dark text-white font-semibold rounded-full px-8 py-4 transition-colors duration-300"
+      >
+        Volver al Inicio
+      </a>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

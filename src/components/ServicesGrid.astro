@@ -1,0 +1,32 @@
+---
+import { services } from "../data/services";
+---
+
+<section class="bg-ice py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <h2 class="font-heading text-4xl md:text-5xl text-navy mb-4">
+        Nuestros Servicios
+      </h2>
+      <p class="text-body text-lg font-body max-w-2xl mx-auto">
+        Soluciones especializadas para cada necesidad
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8 flex flex-col">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-heading text-navy mb-3">{service.name}</h3>
+          <p class="text-body font-body mb-6 flex-grow">{service.shortDescription}</p>
+          <a
+            href={`/servicios#${service.id}`}
+            class="text-accent hover:text-accent-dark font-semibold font-body transition-colors duration-200"
+          >
+            Saber más &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

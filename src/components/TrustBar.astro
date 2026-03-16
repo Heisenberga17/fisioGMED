@@ -1,0 +1,22 @@
+---
+const stats = [
+  { icon: "🏆", number: "+10", label: "Años de Experiencia" },
+  { icon: "👥", number: "+5,000", label: "Pacientes Atendidos" },
+  { icon: "⭐", number: "5.0", label: "Calificación Google" },
+  { icon: "🎓", number: "Especialistas", label: "Certificados" },
+];
+---
+
+<section class="bg-light-bg py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="text-4xl mb-2">{stat.icon}</div>
+          <div class="text-3xl font-bold text-navy font-heading">{stat.number}</div>
+          <div class="text-body mt-1 font-body">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

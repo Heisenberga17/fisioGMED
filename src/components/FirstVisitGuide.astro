@@ -1,0 +1,61 @@
+---
+const steps = [
+  {
+    number: 1,
+    icon: "\u{1F4CB}",
+    title: "Agenda Tu Cita",
+    description: "Contáctanos por WhatsApp, teléfono o formulario para reservar tu horario.",
+  },
+  {
+    number: 2,
+    icon: "\u{1F4C4}",
+    title: "Trae Tus Documentos",
+    description: "Lleva ropa cómoda, estudios de imagen si los tienes, y tu carnet de seguro.",
+  },
+  {
+    number: 3,
+    icon: "\u{1F50D}",
+    title: "Evaluación Completa",
+    description: "Realizamos una evaluación integral de 60 minutos para entender tu condición.",
+  },
+  {
+    number: 4,
+    icon: "\u{1F4DD}",
+    title: "Plan de Tratamiento",
+    description: "Recibes un plan personalizado con objetivos claros y plazos estimados.",
+  },
+];
+---
+
+<section class="bg-ice py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Section Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-heading text-navy mb-4">Tu Primera Visita</h2>
+      <p class="text-body max-w-2xl mx-auto">
+        Todo lo que necesitas saber para tu primera cita en FisioGMED
+      </p>
+    </div>
+
+    <!-- Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step) => (
+        <div class="bg-white rounded-2xl p-6 shadow-sm text-center relative">
+          <!-- Step Number -->
+          <div class="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
+            {step.number}
+          </div>
+
+          <!-- Icon -->
+          <div class="text-4xl mb-3">{step.icon}</div>
+
+          <!-- Title -->
+          <h3 class="text-lg font-heading text-navy mb-2">{step.title}</h3>
+
+          <!-- Description -->
+          <p class="text-body text-sm leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

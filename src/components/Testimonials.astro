@@ -1,0 +1,46 @@
+---
+import { testimonials } from "../data/testimonials";
+
+const featured = testimonials.slice(0, 3);
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <h2 class="font-heading text-4xl md:text-5xl text-navy mb-4">
+        Lo Que Dicen Nuestros Pacientes
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {featured.map((testimonial) => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm flex flex-col">
+          <!-- Stars -->
+          <div class="text-yellow-400 text-xl mb-4">
+            {Array.from({ length: testimonial.rating }).map(() => (
+              <span>&#9733;</span>
+            ))}
+          </div>
+          <!-- Quote -->
+          <p class="text-body italic font-body mb-6 flex-grow">
+            "{testimonial.quote}"
+          </p>
+          <!-- Author -->
+          <div>
+            <span class="font-bold text-navy">— {testimonial.name}</span>
+            <span class="block text-sm text-slate-blue font-body mt-1">{testimonial.role}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <a
+        href="/pacientes"
+        class="text-accent hover:text-accent-dark font-semibold font-body transition-colors duration-200"
+      >
+        Ver más testimonios &rarr;
+      </a>
+    </div>
+  </div>
+</section>

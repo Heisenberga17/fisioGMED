@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+}
+
+const { name, role, quote, rating } = Astro.props;
+
+const stars = Array.from({ length: rating }, (_, i) => i);
+---
+
+<div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-accent">
+  <!-- Star Rating -->
+  <div class="flex gap-1">
+    {stars.map(() => (
+      <span class="text-amber-400 text-lg">&#9733;</span>
+    ))}
+  </div>
+
+  <!-- Quote -->
+  <p class="italic text-body mt-4 leading-relaxed">"{quote}"</p>
+
+  <!-- Author -->
+  <div class="mt-6">
+    <p class="font-bold text-dark">{name}</p>
+    <p class="text-sm text-slate-blue">{role}</p>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero.astro";
+import TrustBar from "../components/TrustBar.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import WhySection from "../components/WhySection.astro";
+import Testimonials from "../components/Testimonials.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+---
+
+<Layout
+  title="FisioGMED — Fisioterapia y Rehabilitación en Costa del Este, Panamá"
+  description="FisioGMED: clínica de fisioterapia especializada en ortopedia deportiva en Costa del Este, Ciudad de Panamá. Rehabilitación personalizada con tecnología de vanguardia."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "PhysicalTherapy",
+      "name": "FisioGMED",
+      "description": "Clínica de fisioterapia especializada en ortopedia deportiva en Costa del Este, Ciudad de Panamá.",
+      "url": "https://fisiogmed.pages.dev",
+      "telephone": "+5072833281",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plaza 770, Costa del Este",
+        "addressLocality": "Ciudad de Panamá",
+        "addressCountry": "PA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 9.0,
+        "longitude": -79.47
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "50"
+      }
+    })} />
+  </Fragment>
+
+  <Navbar client:load />
+
+  <main>
+    <Hero />
+    <TrustBar />
+    <ServicesGrid />
+    <WhySection />
+    <Testimonials />
+    <CtaBanner />
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
