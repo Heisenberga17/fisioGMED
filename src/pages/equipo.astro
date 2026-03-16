@@ -33,6 +33,24 @@ const teamMembers = [
     isLead: false,
   },
 ];
+
+const philosophyItems = [
+  {
+    icon: `<svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    title: "Excelencia Clínica",
+    description: "Protocolos basados en la última evidencia científica internacional.",
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>`,
+    title: "Trato Humano",
+    description: "Cada paciente es tratado con empatía, respeto y dedicación personalizada.",
+  },
+  {
+    icon: `<svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>`,
+    title: "Resultados Medibles",
+    description: "Seguimiento objetivo de tu progreso con metas claras y alcanzables.",
+  },
+];
 ---
 
 <Layout
@@ -62,7 +80,7 @@ const teamMembers = [
     <!-- Team Grid -->
     <section class="py-16 bg-ice">
       <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-heading text-navy text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading text-navy text-center mb-12 scroll-reveal">
           Nuestro Equipo de Especialistas
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -79,33 +97,27 @@ const teamMembers = [
     </section>
 
     <!-- Philosophy Section -->
-    <section class="py-16 bg-light-bg">
+    <section class="py-16 section-mesh">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-heading text-navy mb-6">
+        <h2 class="text-3xl md:text-4xl font-heading text-navy mb-6 scroll-reveal">
           Nuestra Filosofía
         </h2>
-        <p class="text-body text-lg leading-relaxed mb-8">
+        <p class="text-body text-lg leading-relaxed mb-8 scroll-reveal">
           En FisioGMED creemos que cada paciente es único y merece un tratamiento personalizado.
           Nuestro enfoque combina la evidencia científica más actualizada con un trato humano y cercano.
           Nos comprometemos a escucharte, entender tus necesidades y trabajar contigo para alcanzar
           tus objetivos de recuperación.
         </p>
         <div class="grid md:grid-cols-3 gap-8 mt-12">
-          <div class="bg-accent-light rounded-2xl p-6">
-            <div class="text-3xl mb-3">🎯</div>
-            <h3 class="font-heading text-navy text-lg mb-2">Excelencia Clínica</h3>
-            <p class="text-body text-sm">Protocolos basados en la última evidencia científica internacional.</p>
-          </div>
-          <div class="bg-accent-light rounded-2xl p-6">
-            <div class="text-3xl mb-3">❤️</div>
-            <h3 class="font-heading text-navy text-lg mb-2">Trato Humano</h3>
-            <p class="text-body text-sm">Cada paciente es tratado con empatía, respeto y dedicación personalizada.</p>
-          </div>
-          <div class="bg-accent-light rounded-2xl p-6">
-            <div class="text-3xl mb-3">📈</div>
-            <h3 class="font-heading text-navy text-lg mb-2">Resultados Medibles</h3>
-            <p class="text-body text-sm">Seguimiento objetivo de tu progreso con metas claras y alcanzables.</p>
-          </div>
+          {philosophyItems.map((item) => (
+            <div class="scroll-reveal stagger-item card-hover bg-accent-light rounded-2xl p-6">
+              <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mx-auto mb-3 shadow-sm">
+                <Fragment set:html={item.icon} />
+              </div>
+              <h3 class="font-heading text-navy text-lg mb-2">{item.title}</h3>
+              <p class="text-body text-sm">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

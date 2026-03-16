@@ -23,9 +23,9 @@ const benefits = [
 ];
 ---
 
-<section class="bg-light-bg py-20">
+<section class="section-mesh py-20">
   <div class="max-w-7xl mx-auto px-4">
-    <h2 class="font-heading text-4xl md:text-5xl text-navy text-center mb-14">
+    <h2 class="font-heading text-4xl md:text-5xl text-navy text-center mb-14 scroll-reveal">
       ¿Por qué elegir FisioGMED?
     </h2>
 
@@ -33,20 +33,22 @@ const benefits = [
       <!-- Benefits list -->
       <div class="space-y-8">
         {benefits.map((benefit) => (
-          <div class="flex items-start gap-4">
+          <div class="flex items-start gap-4 scroll-reveal stagger-item">
             <div class="flex-shrink-0 mt-1">
-              <svg
-                class="w-6 h-6 text-accent"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <svg
+                  class="w-5 h-5 text-accent"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
             <div>
               <h3 class="text-lg font-bold text-navy font-heading mb-1">{benefit.title}</h3>
@@ -57,8 +59,10 @@ const benefits = [
       </div>
 
       <!-- Quote card -->
-      <div class="bg-accent-light rounded-2xl p-10 flex items-center">
-        <blockquote>
+      <div class="scroll-reveal-right bg-accent-light rounded-2xl p-10 flex items-center relative overflow-hidden">
+        <!-- Subtle pattern -->
+        <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle, rgba(232, 127, 53, 0.08) 1px, transparent 1px); background-size: 20px 20px;" aria-hidden="true"></div>
+        <blockquote class="relative z-10">
           <p class="text-navy italic text-lg leading-relaxed font-body mb-6">
             "Nuestro compromiso es devolverte la calidad de vida que mereces, con un tratamiento integral y humano."
           </p>

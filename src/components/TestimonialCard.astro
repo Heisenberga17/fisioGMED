@@ -11,7 +11,10 @@ const { name, role, quote, rating } = Astro.props;
 const stars = Array.from({ length: rating }, (_, i) => i);
 ---
 
-<div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-accent">
+<div class="scroll-reveal stagger-item card-hover bg-white rounded-2xl p-8 shadow-sm transition-all duration-300 relative overflow-hidden">
+  <!-- Accent gradient top border -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent-dark to-accent"></div>
+
   <!-- Star Rating -->
   <div class="flex gap-1">
     {stars.map(() => (

@@ -69,7 +69,6 @@ export default function ContactForm() {
     value: string
   ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    // Clear error for this field when user starts typing
     if (errors[field as keyof FormErrors]) {
       setErrors((prev) => {
         const updated = { ...prev };
@@ -80,15 +79,18 @@ export default function ContactForm() {
   };
 
   const inputBase =
-    "border rounded-lg p-3 w-full focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors duration-200";
-  const inputNormal = `${inputBase} border-gray-300`;
-  const inputError = `${inputBase} border-red-500`;
+    "border rounded-lg p-3 w-full outline-none transition-all duration-300";
+  const inputNormal = `${inputBase} border-gray-300 focus:ring-2 focus:ring-accent/30 focus:border-accent focus:shadow-[0_0_0_3px_rgba(232,127,53,0.1)]`;
+  const inputError = `${inputBase} border-red-500 focus:ring-2 focus:ring-red-300 focus:border-red-500`;
 
   return (
     <div className="bg-white rounded-2xl shadow-md p-8">
       {/* Success Banner */}
       {submitted && (
-        <div className="bg-green-50 border border-green-300 text-green-800 rounded-lg p-4 mb-6">
+        <div
+          className="bg-green-50 border border-green-300 text-green-800 rounded-lg p-4 mb-6"
+          style={{ animation: "fadeInUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both" }}
+        >
           <p className="font-medium">
             ¡Mensaje enviado! Nos pondremos en contacto pronto.
           </p>
@@ -201,7 +203,7 @@ export default function ContactForm() {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg py-3 transition-colors duration-200"
+          className="btn-primary w-full bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg py-3"
         >
           Enviar Mensaje
         </button>

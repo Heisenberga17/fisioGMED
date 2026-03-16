@@ -48,5 +48,124 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body class="min-h-screen flex flex-col bg-light-bg">
     <slot />
+
+    <script>
+      // ─── Scroll Reveal Observer ───
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        const revealSelectors = [
+          '.scroll-reveal',
+          '.scroll-reveal-left',
+          '.scroll-reveal-right',
+          '.scroll-reveal-scale'
+        ];
+
+        revealSelectors.forEach(selector => {
+          document.querySelectorAll(selector).forEach(el => {
+            scrollObserver.observe(el);
+          });
+        });
+
+        // ─── Counter Animation ───
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = el.getAttribute('data-target');
+              if (!target) return;
+
+              const isFloat = target.includes('.');
+              const hasPlus = target.startsWith('+');
+              const hasComma = target.includes(',');
+              const cleanTarget = parseFloat(target.replace(/[+,]/g, ''));
+              const duration = 2000;
+              const startTime = performance.now();
+
+              function easeOutExpo(t) {
+                return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+              }
+
+              function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easedProgress = easeOutExpo(progress);
+                let current = easedProgress * cleanTarget;
+
+                if (isFloat) {
+                  current = current.toFixed(1);
+                } else {
+                  current = Math.floor(current);
+                }
+
+                let display = String(current);
+                if (hasComma) {
+                  display = Number(current).toLocaleString('es-PA');
+                }
+                if (hasPlus) {
+                  display = '+' + display;
+                }
+
+                el.textContent = display;
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateCounter);
+                }
+              }
+
+              requestAnimationFrame(updateCounter);
+              counterObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-target]').forEach(el => {
+          counterObserver.observe(el);
+        });
+
+        // ─── Header Scroll Class ───
+        const header = document.querySelector('[data-header]');
+        if (header) {
+          const onScroll = () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
+          onScroll();
+        }
+
+        // ─── Ripple Effect on Buttons ───
+        document.querySelectorAll('.btn-primary').forEach(button => {
+          button.addEventListener('click', function(e) {
+            const circle = document.createElement('span');
+            const diameter = Math.max(this.clientWidth, this.clientHeight);
+            const radius = diameter / 2;
+            const rect = this.getBoundingClientRect();
+
+            circle.style.width = circle.style.height = diameter + 'px';
+            circle.style.left = (e.clientX - rect.left - radius) + 'px';
+            circle.style.top = (e.clientY - rect.top - radius) + 'px';
+            circle.classList.add('ripple-effect');
+
+            const ripple = this.querySelector('.ripple-effect');
+            if (ripple) ripple.remove();
+
+            this.appendChild(circle);
+          });
+        });
+      });
+    </script>
   </body>
 </html>

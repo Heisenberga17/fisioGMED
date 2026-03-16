@@ -9,12 +9,17 @@ export default function FaqAccordion() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto scroll-reveal">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
 
         return (
-          <div key={index} className="border-b border-gray-200">
+          <div
+            key={index}
+            className={`border-b border-gray-200 transition-colors duration-300 ${
+              isOpen ? "border-accent/30" : ""
+            }`}
+          >
             <button
               type="button"
               className="w-full text-left py-5 flex justify-between items-center gap-4"

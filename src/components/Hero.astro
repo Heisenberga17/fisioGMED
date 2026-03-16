@@ -2,25 +2,40 @@
 ---
 
 <section class="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-navy to-navy-light overflow-hidden">
+  <!-- Dot pattern overlay -->
+  <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 32px 32px;" aria-hidden="true"></div>
+
+  <!-- Floating decorative circles -->
+  <div class="floating-circle w-72 h-72 -top-20 -right-20 opacity-60" style="animation: floatSlow 8s ease-in-out infinite;" aria-hidden="true"></div>
+  <div class="floating-circle w-96 h-96 -bottom-32 -left-32 opacity-40" style="animation: floatSlowReverse 10s ease-in-out infinite;" aria-hidden="true"></div>
+  <div class="floating-circle w-48 h-48 top-1/3 right-1/4 opacity-30" style="animation: floatSlow 12s ease-in-out infinite 2s;" aria-hidden="true"></div>
+
   <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
-    <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
+    <!-- Accent bar -->
+    <div class="accent-bar mx-auto mb-8 hero-subtitle" style="animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;"></div>
+
+    <h1 class="hero-title font-heading text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight" style="animation: heroTitleIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;">
       Tu Recuperación, Nuestra Prioridad
     </h1>
-    <p class="text-xl max-w-2xl mx-auto text-slate-200 opacity-90 mb-10 font-body">
+
+    <p class="hero-subtitle text-xl max-w-2xl mx-auto text-slate-200 opacity-90 mb-10 font-body" style="animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;">
       Fisioterapia especializada en ortopedia deportiva en Costa del Este, Ciudad de Panamá
     </p>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+    <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4" style="animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;">
       <a
         href="https://wa.me/50767573153?text=Hola%2C%20me%20gustaría%20agendar%20una%20cita"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-accent hover:bg-accent-dark text-white font-semibold rounded-full px-8 py-4 transition-colors duration-300"
+        class="btn-primary bg-accent hover:bg-accent-dark text-white font-semibold rounded-full px-8 py-4"
+        style="box-shadow: 0 8px 32px rgba(232, 127, 53, 0.35);"
       >
         Agendar Cita
       </a>
       <a
         href="/servicios"
-        class="border-2 border-white text-white hover:bg-white hover:text-navy font-semibold rounded-full px-8 py-4 transition-colors duration-300"
+        class="btn-secondary border-2 border-white/40 text-white hover:bg-white hover:text-navy font-semibold rounded-full px-8 py-4"
+        style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.08);"
       >
         Conoce Nuestros Servicios
       </a>

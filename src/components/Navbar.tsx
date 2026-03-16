@@ -21,7 +21,6 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Check initial scroll position
     handleScroll();
 
     return () => {
@@ -29,7 +28,6 @@ export default function Navbar() {
     };
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -44,9 +42,10 @@ export default function Navbar() {
   return (
     <>
       <nav
+        data-header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#2E3A6E] shadow-lg"
+            ? "header-glass scrolled shadow-md"
             : "bg-transparent"
         }`}
       >
@@ -57,7 +56,9 @@ export default function Navbar() {
               <img
                 src="/logo.png"
                 alt="FisioGMED"
-                className="h-10 md:h-12 w-auto brightness-0 invert"
+                className={`h-10 md:h-12 w-auto transition-all duration-300 ${
+                  isScrolled ? "" : "brightness-0 invert"
+                }`}
               />
             </a>
 
@@ -67,7 +68,11 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-white text-sm font-medium hover:text-[#E87F35] transition-colors duration-200"
+                  className={`nav-link-animated text-sm font-medium transition-colors duration-200 ${
+                    isScrolled
+                      ? "text-[#2E3A6E] hover:text-[#E87F35]"
+                      : "text-white hover:text-[#E87F35]"
+                  }`}
                 >
                   {link.label}
                 </a>
@@ -78,7 +83,7 @@ export default function Navbar() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#E87F35] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#D06A20] transition-colors duration-200"
+                className="btn-primary bg-[#E87F35] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#D06A20]"
               >
                 Agendar Cita
               </a>
@@ -91,17 +96,24 @@ export default function Navbar() {
               onClick={() => setIsOpen(true)}
               aria-label="Abrir menú"
             >
-              <span className="block w-6 h-0.5 bg-white"></span>
-              <span className="block w-6 h-0.5 bg-white"></span>
-              <span className="block w-6 h-0.5 bg-white"></span>
+              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#2E3A6E]" : "bg-white"}`}></span>
+              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#2E3A6E]" : "bg-white"}`}></span>
+              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#2E3A6E]" : "bg-white"}`}></span>
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Fullscreen Overlay Menu */}
+      {/* Mobile Fullscreen Overlay Menu — Glassmorphic */}
       {isOpen && (
-        <div className="fixed inset-0 z-[60] bg-[#2E3A6E] flex flex-col">
+        <div
+          className="fixed inset-0 z-[60] flex flex-col"
+          style={{
+            background: 'rgba(46, 58, 110, 0.92)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+          }}
+        >
           {/* Close Button */}
           <div className="flex justify-end p-4">
             <button
@@ -145,7 +157,7 @@ export default function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 bg-[#E87F35] text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-[#D06A20] transition-colors duration-200"
+              className="mt-4 btn-primary bg-[#E87F35] text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-[#D06A20]"
               onClick={() => setIsOpen(false)}
             >
               Agendar Cita

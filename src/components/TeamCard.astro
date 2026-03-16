@@ -7,23 +7,21 @@ interface Props {
 }
 
 const { name, role, bio, isLead = false } = Astro.props;
+
+// Get initials for styled placeholder
+const initials = name.split(' ').filter(w => w.length > 1).slice(0, 2).map(w => w[0]).join('');
 ---
 
 {isLead ? (
-  <div class="lg:col-span-2 bg-white rounded-2xl shadow-md overflow-hidden">
+  <div class="scroll-reveal lg:col-span-2 bg-white rounded-2xl shadow-md overflow-hidden card-hover">
     <div class="grid grid-cols-1 md:grid-cols-2">
-      <!-- Placeholder Image -->
-      <div class="bg-gray-200 h-64 md:h-full min-h-[16rem] flex items-center justify-center">
+      <!-- Styled Placeholder Image -->
+      <div class="bg-gradient-to-br from-navy to-navy-light h-64 md:h-full min-h-[16rem] flex items-center justify-center">
         <div class="text-center">
-          <svg
-            class="w-20 h-20 mx-auto text-gray-400"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-          </svg>
-          <p class="text-gray-400 mt-2 text-sm">Foto próximamente</p>
+          <div class="w-24 h-24 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
+            <span class="text-3xl font-heading text-white">{initials}</span>
+          </div>
+          <p class="text-white/60 mt-2 text-sm">Foto próximamente</p>
         </div>
       </div>
 
@@ -36,19 +34,14 @@ const { name, role, bio, isLead = false } = Astro.props;
     </div>
   </div>
 ) : (
-  <div class="bg-white rounded-2xl shadow-md overflow-hidden">
-    <!-- Placeholder Image -->
-    <div class="bg-gray-200 h-64 flex items-center justify-center">
+  <div class="scroll-reveal stagger-item bg-white rounded-2xl shadow-md overflow-hidden card-hover">
+    <!-- Styled Placeholder Image -->
+    <div class="bg-gradient-to-br from-navy/80 to-slate-blue h-64 flex items-center justify-center">
       <div class="text-center">
-        <svg
-          class="w-16 h-16 mx-auto text-gray-400"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-        </svg>
-        <p class="text-gray-400 mt-2 text-sm">Foto próximamente</p>
+        <div class="w-20 h-20 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
+          <span class="text-2xl font-heading text-white">{initials}</span>
+        </div>
+        <p class="text-white/60 mt-2 text-sm">Foto próximamente</p>
       </div>
     </div>
 
