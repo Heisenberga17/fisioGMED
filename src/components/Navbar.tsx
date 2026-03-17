@@ -4,7 +4,6 @@ const navLinks = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/servicios" },
   { label: "Equipo", href: "/equipo" },
-  { label: "Pacientes", href: "/pacientes" },
   { label: "Contacto", href: "/contacto" },
 ];
 
