@@ -79,12 +79,12 @@ export default function ContactForm() {
   };
 
   const inputBase =
-    "border rounded-lg p-3 w-full outline-none transition-all duration-300";
+    "border rounded-lg p-3 w-full outline-none transition-all duration-300 text-base";
   const inputNormal = `${inputBase} border-gray-300 focus:ring-2 focus:ring-accent/30 focus:border-accent focus:shadow-[0_0_0_3px_rgba(86,114,196,0.1)]`;
   const inputError = `${inputBase} border-red-500 focus:ring-2 focus:ring-red-300 focus:border-red-500`;
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-8">
+    <div className="bg-white rounded-2xl shadow-md p-5 md:p-8">
       {/* Success Banner */}
       {submitted && (
         <div

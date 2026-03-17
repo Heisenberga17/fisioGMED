@@ -32,6 +32,7 @@
 /* Base styles */
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @layer base {
@@ -151,6 +152,13 @@ html {
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ─── Touch Polish ─── */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Staggered animation delays */

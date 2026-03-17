@@ -91,7 +91,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               type="button"
-              className="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+              className="md:hidden flex flex-col justify-center items-center w-11 h-11 space-y-1.5"
               onClick={() => setIsOpen(true)}
               aria-label="Abrir menú"
             >
@@ -111,13 +111,14 @@ export default function Navbar() {
             background: 'rgba(27, 37, 69, 0.95)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
+            overscrollBehavior: 'none',
           }}
         >
           {/* Close Button */}
           <div className="flex justify-end p-4">
             <button
               type="button"
-              className="w-10 h-10 flex items-center justify-center text-white"
+              className="w-11 h-11 flex items-center justify-center text-white"
               onClick={() => setIsOpen(false)}
               aria-label="Cerrar menú"
             >

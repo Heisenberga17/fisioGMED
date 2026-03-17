@@ -71,7 +71,7 @@ const technology = [
         </div>
         <div class="grid md:grid-cols-2 gap-6">
           {clinico.map((service) => (
-            <div id={service.id} class="scroll-reveal stagger-item card-hover bg-white rounded-2xl p-8 shadow-md border border-navy/[0.06]">
+            <div id={service.id} class="scroll-reveal stagger-item card-hover bg-white rounded-2xl p-5 md:p-8 shadow-md border border-navy/[0.06]">
               <div class="flex items-start gap-5 mb-4">
                 {clinicoIcons[service.id] ? (
                   <div class="icon-container text-accent shrink-0" set:html={clinicoIcons[service.id]} />
