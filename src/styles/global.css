@@ -4,15 +4,15 @@
   --color-navy: #2E3A6E;
   --color-navy-light: #3d4d8a;
   --color-slate-blue: #6B7DB3;
-  --color-ice: #EEF0F7;
+  --color-ice: #EEF1F8;
   --color-accent: #5672C4;
   --color-accent-dark: #4561AE;
   --color-accent-light: #EAECF7;
-  --color-sky: #7FBBD5;
-  --color-sky-light: #E8F4F8;
-  --color-dark: #1C1917;
-  --color-body: #44403C;
-  --color-light-bg: #FAFAF9;
+  --color-sand: #C4B396;
+  --color-sand-light: #F0ECE4;
+  --color-dark: #1B2340;
+  --color-body: #3D4663;
+  --color-light-bg: #F8F9FC;
 
   --font-heading: "DM Serif Display", serif;
   --font-body: "DM Sans", sans-serif;
@@ -222,12 +222,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   background:
     radial-gradient(ellipse 60% 40% at 15% 30%, rgba(46, 58, 110, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 85% 70%, rgba(127, 187, 213, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 70%, rgba(196, 179, 150, 0.05) 0%, transparent 60%),
     var(--color-light-bg);
 }
 
 .section-tinted {
-  background: linear-gradient(180deg, #EEF0F7 0%, var(--color-light-bg) 100%);
+  background: linear-gradient(180deg, var(--color-ice) 0%, var(--color-light-bg) 100%);
 }
 
 .section-dots {
@@ -361,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 .accent-bar {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
+  background: var(--color-sand);
   border-radius: 2px;
 }
 
@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ─── Section Sky Background ─── */
 .section-sky {
-  background: linear-gradient(180deg, #E8F4F8 0%, #F0F7FA 100%);
+  background: linear-gradient(180deg, var(--color-sand-light) 0%, var(--color-light-bg) 100%);
 }
 
 /* ─── Section Wave Dividers ─── */

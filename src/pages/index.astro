@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero.astro";
-import TrustBar from "../components/TrustBar.astro";
 import ServicesGrid from "../components/ServicesGrid.astro";
 import WhySection from "../components/WhySection.astro";
 import Testimonials from "../components/Testimonials.astro";
@@ -34,11 +33,6 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
         "latitude": 9.0,
         "longitude": -79.47
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "50"
-      }
     })} />
   </Fragment>
 
@@ -46,7 +40,6 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 
   <main>
     <Hero />
-    <TrustBar />
     <ServicesGrid />
     <WhySection />
     <Testimonials />
