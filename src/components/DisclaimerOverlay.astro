@@ -1,0 +1,188 @@
+---
+---
+
+<div id="disclaimer-overlay" class="disclaimer-overlay">
+  <div class="disclaimer-content">
+    <img src="/logo.png" alt="fisioGMED" class="disclaimer-logo" />
+    <h1 class="disclaimer-title">Aviso</h1>
+    <p class="disclaimer-text">
+      Este sitio web es una <strong>propuesta de diseño y desarrollo</strong> creada de forma independiente.
+      No es un sitio oficial ni ha sido contratado por fisioGMED.
+    </p>
+    <p class="disclaimer-text disclaimer-text-secondary">
+      Todo el contenido presentado es con fines demostrativos.
+    </p>
+
+    <div class="disclaimer-divider"></div>
+
+    <p class="disclaimer-text disclaimer-text-author">
+      Si quieres ver otros sitios web que he desarrollado:
+    </p>
+    <div class="disclaimer-links">
+      <a href="https://massport507.com" target="_blank" rel="noopener">massport507.com</a>
+      <a href="https://microcleanpa.com" target="_blank" rel="noopener">microcleanpa.com <span class="badge-dev">en desarrollo</span></a>
+      <a href="https://casa24records.info" target="_blank" rel="noopener">casa24records.info</a>
+    </div>
+
+    <p class="disclaimer-text disclaimer-text-contact">
+      <a href="https://www.linkedin.com/in/fernando-quijano-0880911b1/" target="_blank" rel="noopener" class="disclaimer-linkedin">LinkedIn</a>
+      <span class="disclaimer-separator">|</span>
+      <a href="https://wa.me/50763797497" target="_blank" rel="noopener" class="disclaimer-whatsapp">WhatsApp +507 6379-7497</a>
+    </p>
+
+    <button id="disclaimer-continue" class="disclaimer-btn">Continuar</button>
+  </div>
+</div>
+
+<style>
+  .disclaimer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-navy);
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .disclaimer-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .disclaimer-content {
+    text-align: center;
+    max-width: 480px;
+    padding: 2rem 1.5rem;
+  }
+
+  .disclaimer-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+  }
+
+  .disclaimer-title {
+    color: #fff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .disclaimer-text {
+    color: var(--color-slate-blue);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .disclaimer-text strong {
+    color: #fff;
+  }
+
+  .disclaimer-text-secondary {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .disclaimer-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--color-slate-blue);
+    opacity: 0.3;
+    margin: 1.5rem auto;
+  }
+
+  .disclaimer-text-author {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .disclaimer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .disclaimer-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .disclaimer-links a:hover {
+    color: #fff;
+  }
+
+  .badge-dev {
+    font-size: 0.7rem;
+    color: var(--color-navy);
+    background: var(--color-slate-blue);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.25rem;
+    vertical-align: middle;
+  }
+
+  .disclaimer-text-contact {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .disclaimer-text-contact a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .disclaimer-text-contact a:hover {
+    color: #fff;
+  }
+
+  .disclaimer-separator {
+    color: var(--color-slate-blue);
+    opacity: 0.4;
+    margin: 0 0.5rem;
+  }
+
+  .disclaimer-btn {
+    display: inline-block;
+    padding: 0.75rem 2.5rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .disclaimer-btn:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
+  }
+
+  .disclaimer-btn:active {
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const overlay = document.getElementById('disclaimer-overlay');
+  const btn = document.getElementById('disclaimer-continue');
+
+  if (sessionStorage.getItem('disclaimer-accepted')) {
+    overlay?.classList.add('hidden');
+  }
+
+  btn?.addEventListener('click', () => {
+    sessionStorage.setItem('disclaimer-accepted', '1');
+    overlay?.classList.add('hidden');
+  });
+</script>
