@@ -23,11 +23,22 @@ const benefits = [
 ];
 ---
 
-<section class="section-mesh py-20">
+<section class="section-sky py-20 relative">
+  <!-- Wave divider at top -->
+  <div class="section-divider-top">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#EEF0F7" d="M0,32 C480,0 960,48 1440,16 L1440,0 L0,0 Z"/>
+    </svg>
+  </div>
+
   <div class="max-w-7xl mx-auto px-4">
-    <h2 class="font-heading text-4xl md:text-5xl text-navy text-center mb-14 scroll-reveal">
-      ¿Por qué elegir FisioGMED?
-    </h2>
+    <div class="text-center mb-14 scroll-reveal">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest font-body mb-3">Nuestra Diferencia</p>
+      <h2 class="font-heading text-4xl md:text-5xl text-navy mb-4">
+        ¿Por qué elegir FisioGMED?
+      </h2>
+      <div class="accent-bar mx-auto mt-4 mb-4"></div>
+    </div>
 
     <div class="grid lg:grid-cols-2 gap-12 items-start">
       <!-- Benefits list -->
@@ -58,15 +69,21 @@ const benefits = [
         ))}
       </div>
 
-      <!-- Quote card -->
-      <div class="scroll-reveal-right bg-accent-light rounded-2xl p-10 flex items-center relative overflow-hidden">
-        <!-- Subtle pattern -->
-        <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle, rgba(86, 114, 196, 0.08) 1px, transparent 1px); background-size: 20px 20px;" aria-hidden="true"></div>
+      <!-- Dark quote card -->
+      <div class="scroll-reveal-right rounded-2xl p-10 flex items-center relative overflow-hidden" style="background: linear-gradient(135deg, #2E3A6E 0%, #3d4d8a 100%);">
+        <!-- Dot pattern overlay -->
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px); background-size: 20px 20px;" aria-hidden="true"></div>
+        <!-- Floating circle decoration -->
+        <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full border border-white/10" aria-hidden="true"></div>
         <blockquote class="relative z-10">
-          <p class="text-navy italic text-lg leading-relaxed font-body mb-6">
+          <!-- Decorative quote icon -->
+          <svg class="w-12 h-12 text-white/20 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z"/>
+          </svg>
+          <p class="text-white/90 italic text-lg leading-relaxed font-body mb-6">
             "Nuestro compromiso es devolverte la calidad de vida que mereces, con un tratamiento integral y humano."
           </p>
-          <footer class="text-navy font-heading font-bold text-base">
+          <footer class="text-white font-heading font-bold text-base">
             — Dr. FisioGMED
           </footer>
         </blockquote>

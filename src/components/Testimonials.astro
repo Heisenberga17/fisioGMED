@@ -4,19 +4,28 @@ import { testimonials } from "../data/testimonials";
 const featured = testimonials.slice(0, 3);
 ---
 
-<section class="section-tinted py-20">
+<section class="section-tinted py-20 relative">
+  <!-- Wave divider at top -->
+  <div class="section-divider-top">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#E8F4F8" d="M0,16 C240,48 480,0 720,32 C960,48 1200,8 1440,24 L1440,0 L0,0 Z"/>
+    </svg>
+  </div>
+
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-14 scroll-reveal">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest font-body mb-3">Testimonios</p>
       <h2 class="font-heading text-4xl md:text-5xl text-navy mb-4">
         Lo Que Dicen Nuestros Pacientes
       </h2>
+      <div class="accent-bar mx-auto mt-4 mb-4"></div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
       {featured.map((testimonial) => (
-        <div class="scroll-reveal stagger-item card-hover bg-white rounded-2xl p-8 shadow-sm flex flex-col relative overflow-hidden">
+        <div class="scroll-reveal stagger-item card-hover bg-gradient-to-b from-white to-ice/30 rounded-2xl p-8 shadow-sm flex flex-col relative overflow-hidden">
           <!-- Accent gradient top border -->
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent-dark to-accent"></div>
+          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-accent-dark to-accent"></div>
           <!-- Stars -->
           <div class="text-yellow-400 text-xl mb-4">
             {Array.from({ length: testimonial.rating }).map(() => (

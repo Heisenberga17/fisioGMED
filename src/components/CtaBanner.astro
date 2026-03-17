@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="bg-navy py-16 relative overflow-hidden">
+<section class="py-16 relative overflow-hidden" style="background: linear-gradient(180deg, #2E3A6E 0%, #374485 100%);">
   <!-- Floating decorative circles -->
   <div class="floating-circle w-64 h-64 -top-16 -right-16 opacity-40" style="animation: floatSlow 9s ease-in-out infinite;" aria-hidden="true"></div>
   <div class="floating-circle w-80 h-80 -bottom-24 -left-24 opacity-30" style="animation: floatSlowReverse 11s ease-in-out infinite;" aria-hidden="true"></div>
@@ -10,6 +10,8 @@
   <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(86, 114, 196, 0.08) 0%, transparent 60%);" aria-hidden="true"></div>
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
+    <!-- Light accent bar above heading -->
+    <div class="w-20 h-1 bg-gradient-to-r from-accent via-sky to-accent rounded-full mx-auto mb-6"></div>
     <h2 class="font-heading text-4xl md:text-5xl mb-4 scroll-reveal">
       ¿Listo para Empezar tu Recuperación?
     </h2>
@@ -41,5 +43,12 @@
         Llamar Ahora
       </a>
     </div>
+  </div>
+
+  <!-- Bottom wave divider to Footer -->
+  <div class="absolute bottom-0 left-0 w-full leading-none">
+    <svg class="block w-full" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#2E3A6E" d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,60 1440,60 L1440,60 L0,60 Z"/>
+    </svg>
   </div>
 </section>

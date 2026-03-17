@@ -27,20 +27,22 @@ const stats = [
 ];
 ---
 
-<section class="bg-light-bg py-12">
+<section class="relative z-20 -mt-12 pb-8">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {stats.map((stat) => (
-        <div class="scroll-reveal stagger-item text-center">
-          <div class="flex justify-center mb-3" set:html={stat.icon} />
-          {stat.target ? (
-            <div class="text-3xl font-bold text-navy font-heading" data-target={stat.target}>0</div>
-          ) : (
-            <div class="text-3xl font-bold text-navy font-heading">{stat.number}</div>
-          )}
-          <div class="text-body mt-1 font-body">{stat.label}</div>
-        </div>
-      ))}
+    <div class="bg-white/80 backdrop-blur rounded-2xl shadow-elevated py-10 px-8 border border-white/60 max-w-5xl mx-auto" style="box-shadow: var(--shadow-elevated);">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="trust-stat scroll-reveal stagger-item text-center">
+            <div class="flex justify-center mb-3" set:html={stat.icon} />
+            {stat.target ? (
+              <div class="text-3xl font-bold text-navy font-heading" data-target={stat.target}>0</div>
+            ) : (
+              <div class="text-3xl font-bold text-navy font-heading">{stat.number}</div>
+            )}
+            <div class="text-body mt-1 font-body">{stat.label}</div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

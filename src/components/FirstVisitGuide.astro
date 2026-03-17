@@ -27,11 +27,13 @@ const steps = [
 ];
 ---
 
-<section class="bg-ice py-16">
+<section class="section-sky py-16">
   <div class="max-w-7xl mx-auto px-4">
     <!-- Section Heading -->
     <div class="text-center mb-12 scroll-reveal">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest font-body mb-3">Guia para Pacientes</p>
       <h2 class="text-3xl md:text-4xl font-heading text-navy mb-4">Tu Primera Visita</h2>
+      <div class="accent-bar mx-auto mt-4 mb-4"></div>
       <p class="text-body max-w-2xl mx-auto">
         Todo lo que necesitas saber para tu primera cita en FisioGMED
       </p>
@@ -43,7 +45,7 @@ const steps = [
       <div class="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20" aria-hidden="true"></div>
 
       {steps.map((step) => (
-        <div class="scroll-reveal stagger-item card-hover bg-white rounded-2xl p-6 shadow-sm text-center relative z-10">
+        <div class="scroll-reveal stagger-item card-hover bg-white rounded-2xl p-6 shadow-sm text-center relative z-10 border-t-4 border-accent/30">
           <!-- Step Number -->
           <div class="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4" style="box-shadow: 0 4px 12px rgba(86, 114, 196, 0.3);">
             {step.number}

@@ -7,11 +7,34 @@ import CtaBanner from "../components/CtaBanner.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 import { services } from "../data/services";
+
+const technology = [
+  {
+    name: "Láser de Alta Intensidad",
+    description: "Reduce dolor e inflamación de forma rápida, estimulando la regeneración celular y acelerando la curación.",
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>`,
+  },
+  {
+    name: "Game Ready",
+    description: "Sistema de compresión y frío utilizado por equipos profesionales para recuperación post-esfuerzo y post-operatoria.",
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>`,
+  },
+  {
+    name: "VertiMax",
+    description: "Plataforma innovadora para mejorar fuerza, potencia, velocidad y rendimiento funcional en rehabilitación.",
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>`,
+  },
+  {
+    name: "Sistemas Inerciales",
+    description: "Método Yo-Yo para mejorar el control neuromuscular, la potencia y la prevención de re-lesiones.",
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
+  },
+];
 ---
 
 <Layout
   title="Servicios — FisioGMED | Fisioterapia Especializada en Panamá"
-  description="Conoce nuestros servicios de fisioterapia: rehabilitación deportiva, terapia manual, dolor de columna, rehabilitación post-quirúrgica, fisioterapia preventiva y ondas de choque."
+  description="Conoce nuestros servicios: ortopedia, fisioterapia deportiva, rehabilitación ortopédica, readaptación deportiva, ondas de choque, tecarterapia, nutrición deportiva y tecnología de recuperación avanzada."
 >
   <Navbar client:load />
 
@@ -21,7 +44,7 @@ import { services } from "../data/services";
       subtitle="Tratamientos especializados respaldados por la evidencia científica para tu recuperación óptima"
     />
 
-    {services.map((service, index) => (
+    {services.slice(0, 5).map((service, index) => (
       <ServiceBlock
         id={service.id}
         name={service.name}
@@ -29,6 +52,45 @@ import { services } from "../data/services";
         fullDescription={service.fullDescription}
         treatments={service.treatments}
         reversed={index % 2 !== 0}
+      />
+    ))}
+
+    <!-- Tecnología de Recuperación Avanzada -->
+    <section class="py-16 relative overflow-hidden" style="background: linear-gradient(180deg, #2E3A6E 0%, #374485 100%);">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 24px 24px;"></div>
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="text-center mb-12">
+          <p class="text-sky text-sm font-semibold uppercase tracking-widest font-body mb-3">Tecnología</p>
+          <h2 class="text-3xl md:text-4xl font-heading text-white mb-4">
+            Tecnología de Recuperación Avanzada
+          </h2>
+          <div class="w-20 h-1 bg-gradient-to-r from-accent via-sky to-accent rounded-full mx-auto mb-6"></div>
+          <p class="text-slate-blue text-lg font-body max-w-2xl mx-auto">
+            Equipos de última generación para acelerar tu recuperación
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {technology.map((tech) => (
+            <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/15 transition-colors duration-300">
+              <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-sky">
+                <Fragment set:html={tech.icon} />
+              </div>
+              <h3 class="font-heading text-white text-lg mb-2">{tech.name}</h3>
+              <p class="text-slate-blue text-sm font-body">{tech.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {services.slice(5).map((service, index) => (
+      <ServiceBlock
+        id={service.id}
+        name={service.name}
+        icon={service.icon}
+        fullDescription={service.fullDescription}
+        treatments={service.treatments}
+        reversed={(index + 5) % 2 !== 0}
       />
     ))}
 
