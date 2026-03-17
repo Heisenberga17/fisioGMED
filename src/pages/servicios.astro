@@ -6,7 +6,11 @@ import ServiceBlock from "../components/ServiceBlock.astro";
 import CtaBanner from "../components/CtaBanner.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
-import { services } from "../data/services";
+import { services, categoryLabels } from "../data/services";
+
+const clinico = services.filter((s) => s.category === "clinico");
+const rendimiento = services.filter((s) => s.category === "rendimiento");
+const tecnologia = services.filter((s) => s.category === "tecnologia");
 
 const technology = [
   {
@@ -44,7 +48,38 @@ const technology = [
       subtitle="Tratamientos especializados respaldados por la evidencia científica para tu recuperación óptima"
     />
 
-    {services.slice(0, 5).map((service, index) => (
+    <!-- Category: Servicios Clínicos -->
+    <section class="py-12 bg-light-bg">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-8">
+          <div class="accent-bar mb-4"></div>
+          <h2 class="text-2xl md:text-3xl font-heading text-navy">{categoryLabels.clinico}</h2>
+        </div>
+      </div>
+    </section>
+
+    {clinico.map((service, index) => (
+      <ServiceBlock
+        id={service.id}
+        name={service.name}
+        icon={service.icon}
+        fullDescription={service.fullDescription}
+        treatments={service.treatments}
+        reversed={index % 2 !== 0}
+      />
+    ))}
+
+    <!-- Category: Rendimiento y Recuperación -->
+    <section class="py-12 bg-light-bg">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-8">
+          <div class="accent-bar mb-4"></div>
+          <h2 class="text-2xl md:text-3xl font-heading text-navy">{categoryLabels.rendimiento}</h2>
+        </div>
+      </div>
+    </section>
+
+    {rendimiento.map((service, index) => (
       <ServiceBlock
         id={service.id}
         name={service.name}
@@ -83,14 +118,24 @@ const technology = [
       </div>
     </section>
 
-    {services.slice(5).map((service, index) => (
+    <!-- Category: Tecnología y Modalidades -->
+    <section class="py-12 bg-light-bg">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mb-8">
+          <div class="accent-bar mb-4"></div>
+          <h2 class="text-2xl md:text-3xl font-heading text-navy">{categoryLabels.tecnologia}</h2>
+        </div>
+      </div>
+    </section>
+
+    {tecnologia.map((service, index) => (
       <ServiceBlock
         id={service.id}
         name={service.name}
         icon={service.icon}
         fullDescription={service.fullDescription}
         treatments={service.treatments}
-        reversed={(index + 5) % 2 !== 0}
+        reversed={index % 2 !== 0}
       />
     ))}
 

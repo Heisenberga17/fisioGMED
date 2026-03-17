@@ -2,10 +2,9 @@
 interface Props {
   title: string;
   subtitle?: string;
-  waveFill?: string;
 }
 
-const { title, subtitle, waveFill = "#F8F9FC" } = Astro.props;
+const { title, subtitle } = Astro.props;
 ---
 
 <section class="bg-navy pt-12 md:pt-16 pb-20 md:pb-24 relative overflow-hidden">
@@ -54,12 +53,5 @@ const { title, subtitle, waveFill = "#F8F9FC" } = Astro.props;
         </p>
       )
     }
-  </div>
-
-  <!-- Bottom Wave -->
-  <div class="absolute bottom-0 left-0 w-full leading-none">
-    <svg class="block w-full" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill={waveFill} d="M0,48 C240,80 480,16 720,48 C960,80 1200,16 1440,48 L1440,80 L0,80 Z"/>
-    </svg>
   </div>
 </section>

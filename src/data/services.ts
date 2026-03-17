@@ -5,7 +5,14 @@ export interface Service {
   fullDescription: string;
   icon: string;
   treatments: string[];
+  category: "clinico" | "rendimiento" | "tecnologia";
 }
+
+export const categoryLabels: Record<Service["category"], string> = {
+  clinico: "Servicios Clínicos",
+  rendimiento: "Rendimiento y Recuperación",
+  tecnologia: "Tecnología y Modalidades",
+};
 
 export const services: Service[] = [
   {
@@ -23,6 +30,7 @@ export const services: Service[] = [
       "Seguimiento post-operatorio",
       "Coordinación con equipo de rehabilitación",
     ],
+    category: "clinico",
   },
   {
     id: "fisioterapia-deportiva",
@@ -39,6 +47,7 @@ export const services: Service[] = [
       "Vendaje neuromuscular (kinesiotaping)",
       "Programa para jóvenes atletas (15-21 años)",
     ],
+    category: "clinico",
   },
   {
     id: "rehabilitacion-ortopedica",
@@ -55,6 +64,7 @@ export const services: Service[] = [
       "Manejo de lesiones crónicas",
       "Terapia manual ortopédica",
     ],
+    category: "clinico",
   },
   {
     id: "readaptacion-deportiva",
@@ -71,6 +81,7 @@ export const services: Service[] = [
       "Entrenamiento de potencia y velocidad",
       "Simulación de gestos deportivos específicos",
     ],
+    category: "rendimiento",
   },
   {
     id: "adulto-mayor",
@@ -87,6 +98,7 @@ export const services: Service[] = [
       "Manejo del dolor articular y artritis",
       "Programas de movilidad y flexibilidad",
     ],
+    category: "clinico",
   },
   {
     id: "ondas-choque",
@@ -103,6 +115,7 @@ export const services: Service[] = [
       "Tendinitis calcificante de hombro",
       "Síndrome de dolor miofascial",
     ],
+    category: "tecnologia",
   },
   {
     id: "tecarterapia",
@@ -119,6 +132,7 @@ export const services: Service[] = [
       "Contracturas y dolor articular",
       "Reducción de inflamación crónica",
     ],
+    category: "tecnologia",
   },
   {
     id: "nutricion-deportiva",
@@ -135,6 +149,7 @@ export const services: Service[] = [
       "Nutrición para recuperación de lesiones",
       "Suplementación deportiva guiada",
     ],
+    category: "rendimiento",
   },
   {
     id: "fisioterapia-domicilio",
@@ -151,6 +166,7 @@ export const services: Service[] = [
       "Electroterapia portátil",
       "Seguimiento y plan de ejercicios en casa",
     ],
+    category: "tecnologia",
   },
   {
     id: "recovery-deportivo",
@@ -167,5 +183,6 @@ export const services: Service[] = [
       "Crioterapia de recuperación",
       "Técnicas de relajación muscular profunda",
     ],
+    category: "rendimiento",
   },
 ];

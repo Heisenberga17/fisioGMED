@@ -37,15 +37,21 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--font-body);
-  color: var(--color-body);
-  background-color: var(--color-light-bg);
-}
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--color-body);
+    background-color: var(--color-light-bg);
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--color-dark);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+  }
+
+  h1 {
+    letter-spacing: -0.02em;
+  }
 }
 
 /* ─── Keyframes ─── */
@@ -217,32 +223,6 @@ h1, h2, h3, h4, h5, h6 {
 .stagger-item:nth-child(9) { transition-delay: 0.45s; }
 .stagger-item:nth-child(10) { transition-delay: 0.5s; }
 
-/* ─── Section Background Variants ─── */
-.section-mesh {
-  position: relative;
-  background:
-    radial-gradient(ellipse 60% 40% at 15% 30%, rgba(46, 58, 110, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 85% 70%, rgba(196, 179, 150, 0.05) 0%, transparent 60%),
-    var(--color-light-bg);
-}
-
-.section-tinted {
-  background: linear-gradient(180deg, var(--color-ice) 0%, var(--color-light-bg) 100%);
-}
-
-.section-dots {
-  position: relative;
-}
-
-.section-dots::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(46, 58, 110, 0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
-  pointer-events: none;
-}
-
 /* ─── Button Hover System ─── */
 .btn-primary {
   position: relative;
@@ -292,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-hover:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-elevated);
 }
 
@@ -349,19 +329,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.1) rotate(-3deg);
 }
 
-/* ─── Floating Decorative Elements ─── */
-.floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  pointer-events: none;
-}
-
 /* ─── Accent Bars ─── */
 .accent-bar {
   width: 80px;
   height: 4px;
-  background: var(--color-sand);
+  background: linear-gradient(90deg, var(--color-sand), var(--color-sand-light));
   border-radius: 2px;
 }
 
@@ -373,27 +345,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .arrow-link:hover .arrow {
   transform: translateX(6px);
-}
-
-/* ─── Section Sky Background ─── */
-.section-sky {
-  background: linear-gradient(180deg, var(--color-sand-light) 0%, var(--color-light-bg) 100%);
-}
-
-/* ─── Section Wave Dividers ─── */
-.section-divider-top {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  line-height: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.section-divider-top svg {
-  display: block;
-  width: 100%;
-  height: 48px;
 }
 
 /* ─── TrustBar Stat Dividers ─── */
@@ -431,7 +382,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: none;
   }
 
-  .floating-circle,
   [class*="animate-"] {
     animation: none !important;
   }
