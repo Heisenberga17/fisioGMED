@@ -12,13 +12,13 @@ const initials = name.split(' ').filter(w => w.length > 1).slice(0, 2).map(w => 
 ---
 
 <div class="scroll-reveal stagger-item bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-navy/[0.06]">
-  <!-- Styled Placeholder Image -->
-  <div class="bg-gradient-to-br from-navy/80 to-slate-blue h-64 flex items-center justify-center">
-    <div class="text-center">
-      <div class="w-20 h-20 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
-        <span class="text-2xl font-heading text-white">{initials}</span>
+  <div class="bg-gradient-to-br from-[#1B2545] via-[#2A3A6B] to-[#1B2545] h-64 flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0" style="background-image: linear-gradient(rgba(0,194,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,194,255,0.04) 1px, transparent 1px); background-size: 20px 20px;" aria-hidden="true"></div>
+    <div class="text-center relative z-10">
+      <div class="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm border-2 border-[#00C2FF]/30 flex items-center justify-center mx-auto mb-3">
+        <span class="text-3xl font-heading text-white/90">{initials}</span>
       </div>
-      <p class="text-white/60 mt-2 text-sm">Foto próximamente</p>
+      <p class="text-[#00C2FF]/60 mt-2 text-xs uppercase tracking-widest">Foto próximamente</p>
     </div>
   </div>
 

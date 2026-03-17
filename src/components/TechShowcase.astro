@@ -3,22 +3,27 @@ const equipment = [
   {
     name: "Ondas de Choque Radiales",
     description: "Tratamiento no invasivo para tendinitis cronicas, calcificaciones y lesiones que no responden a terapia convencional.",
+    image: "/images/tech-ondas-choque.jpg",
   },
   {
     name: "Tecarterapia",
     description: "Tecnologia de radiofrecuencia que estimula la regeneracion natural de los tejidos y acelera la recuperacion.",
+    image: "/images/tech-tecarterapia.jpg",
   },
   {
     name: "Game Ready",
     description: "Sistema de crioterapia y compresion simultanea utilizado por equipos profesionales para recovery post-entrenamiento.",
+    image: "/images/tech-game-ready.jpg",
   },
   {
     name: "VertiMax",
     description: "Plataforma de entrenamiento de resistencia variable para potencia explosiva y readaptacion deportiva.",
+    image: "/images/tech-vertimax.jpg",
   },
   {
     name: "Sistemas Inerciales",
     description: "Tecnologia de entrenamiento excentrico para fortalecimiento muscular y prevencion de lesiones.",
+    image: "/images/tech-inerciales.jpg",
   },
 ];
 ---
@@ -39,9 +44,13 @@ const equipment = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {equipment.map((item) => (
         <div class="scroll-reveal stagger-item group rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-          <!-- Placeholder image -->
-          <div class="aspect-video rounded-xl bg-white/5 mb-5 flex items-center justify-center border border-white/5">
-            <span class="text-white/20 text-xs uppercase tracking-wider">Foto del equipo</span>
+          <div class="aspect-video rounded-xl mb-5 overflow-hidden border border-white/10">
+            <img
+              src={item.image}
+              alt={item.name}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <h3 class="text-white font-bold text-lg mb-2">{item.name}</h3>
           <p class="text-[#6B7DB3] text-sm leading-relaxed">{item.description}</p>
