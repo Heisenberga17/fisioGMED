@@ -140,7 +140,7 @@ export const services: Service[] = [
     shortDescription:
       "Atención nutricional personalizada con evaluación de composición corporal InBody.",
     fullDescription:
-      "Nuestro servicio de nutrición deportiva incluye evaluación de composición corporal con tecnología InBody, que mide con precisión tu porcentaje de masa muscular, masa grasa, peso y talla. La Lic. Karen León interpreta tus resultados y diseña un plan nutricional personalizado para optimizar tu rendimiento, acelerar la recuperación de lesiones y mejorar tu composición corporal.",
+      "Nuestro servicio de nutrición deportiva incluye evaluación de composición corporal con tecnología InBody, que mide con precisión tu porcentaje de masa muscular, masa grasa, peso y talla. Nuestro equipo interpreta tus resultados y diseña un plan nutricional personalizado para optimizar tu rendimiento, acelerar la recuperación de lesiones y mejorar tu composición corporal.",
     icon: "🥗",
     treatments: [
       "Evaluación de composición corporal InBody con interpretación",
