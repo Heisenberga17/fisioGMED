@@ -1,41 +1,66 @@
 ---
 ---
 
-<section class="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-navy to-navy-light overflow-hidden">
-  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
-    <!-- Accent bar -->
-    <div class="accent-bar mx-auto mb-8 hero-subtitle" style="animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;"></div>
+<section class="relative min-h-[85vh] flex items-center bg-[#1B2545] overflow-hidden">
+  <!-- Grid pattern background -->
+  <div class="absolute inset-0" style="background-image: linear-gradient(rgba(0,194,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,194,255,0.03) 1px, transparent 1px); background-size: 40px 40px;" aria-hidden="true"></div>
 
-    <h1 class="hero-title font-heading text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight mb-6 leading-tight text-white" style="animation: heroTitleIn 1s cubic-bezier(0.22, 1, 0.36, 1) both;">
-      Tu Recuperación, Nuestra Prioridad
-    </h1>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 w-full py-20 md:py-0">
+    <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
+      <!-- Text Column (60%) -->
+      <div class="md:col-span-3">
+        <!-- Badge -->
+        <div class="hero-subtitle inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-4 py-1.5 mb-6" style="animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;">
+          <span class="w-2 h-2 rounded-full bg-[#00C2FF]"></span>
+          <span class="text-white/80 text-sm font-medium tracking-wide">Fisioterapia Deportiva en Panama</span>
+        </div>
 
-    <p class="hero-subtitle text-xl max-w-2xl mx-auto text-slate-200 opacity-90 mb-10 font-body" style="animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;">
-      Fisioterapia especializada en ortopedia deportiva en Costa del Este, Ciudad de Panamá
-    </p>
+        <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.95] tracking-tight mb-6" style="animation: heroTitleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;">
+          <span class="text-white block">RENDIMIENTO.</span>
+          <span class="text-white block">RECUPERACION.</span>
+          <span class="text-[#00C2FF] block">RESULTADOS.</span>
+        </h1>
 
-    <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4" style="animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;">
-      <a
-        href="https://wa.me/50767573153?text=Hola%2C%20me%20gustaría%20agendar%20una%20cita"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary bg-accent hover:bg-accent-dark text-white font-semibold rounded-full px-8 py-4"
-        style="box-shadow: 0 8px 32px rgba(86, 114, 196, 0.35);"
-      >
-        Agendar Cita
-      </a>
-      <a
-        href="/servicios"
-        class="btn-secondary border-2 border-white/40 text-white hover:bg-white hover:text-navy font-semibold rounded-full px-8 py-4"
-        style="backdrop-filter: blur(8px); background: rgba(255,255,255,0.08);"
-      >
-        Conoce Nuestros Servicios
-      </a>
+        <p class="hero-subtitle text-lg md:text-xl max-w-xl text-slate-300 mb-8 leading-relaxed" style="animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;">
+          Clinica de fisioterapia especializada en ortopedia deportiva. Fisioterapeuta oficial de la Seleccion de Futbol de Panama.
+        </p>
+
+        <div class="hero-buttons flex flex-col sm:flex-row items-start gap-4" style="animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;">
+          <a
+            href="https://wa.me/50767573153?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary bg-[#00C2FF] hover:bg-[#00A3D9] text-[#0F172A] font-bold rounded-lg px-8 py-4 text-base"
+            style="box-shadow: 0 8px 32px rgba(0, 194, 255, 0.25);"
+          >
+            Agendar Cita
+          </a>
+          <a
+            href="/servicios"
+            class="btn-secondary border-2 border-white/20 text-white hover:bg-white/10 font-semibold rounded-lg px-8 py-4 text-base"
+          >
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo Placeholder Column (40%) - Desktop only -->
+      <div class="hidden md:block md:col-span-2">
+        <div class="relative aspect-[4/5] rounded-2xl bg-[#2A3A6B] flex items-center justify-center overflow-hidden">
+          <!-- Corner brackets -->
+          <div class="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#00C2FF]/40" aria-hidden="true"></div>
+          <div class="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#00C2FF]/40" aria-hidden="true"></div>
+          <div class="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#00C2FF]/40" aria-hidden="true"></div>
+          <div class="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#00C2FF]/40" aria-hidden="true"></div>
+          <!-- Placeholder text -->
+          <span class="text-white/30 text-sm font-medium tracking-wider uppercase">Foto de clinica</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Gradient fade to next section -->
   <div class="absolute bottom-0 left-0 w-full h-32"
-       style="background: linear-gradient(to bottom, transparent, #EEF1F8);"
+       style="background: linear-gradient(to bottom, transparent, #F4F6FA);"
        aria-hidden="true"></div>
 </section>

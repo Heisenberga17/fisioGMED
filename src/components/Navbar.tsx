@@ -70,8 +70,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`nav-link-animated text-sm font-medium transition-colors duration-200 ${
                     isScrolled
-                      ? "text-[#2E3A6E] hover:text-[#5672C4]"
-                      : "text-white hover:text-[#5672C4]"
+                      ? "text-[#1B2545] hover:text-[#00C2FF]"
+                      : "text-white hover:text-[#00C2FF]"
                   }`}
                 >
                   {link.label}
@@ -83,7 +83,7 @@ export default function Navbar() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary bg-[#5672C4] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#4561AE]"
+                className="btn-primary bg-[#00C2FF] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#00A3D9]"
               >
                 Agendar Cita
               </a>
@@ -96,9 +96,9 @@ export default function Navbar() {
               onClick={() => setIsOpen(true)}
               aria-label="Abrir menú"
             >
-              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#2E3A6E]" : "bg-white"}`}></span>
-              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#2E3A6E]" : "bg-white"}`}></span>
-              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#2E3A6E]" : "bg-white"}`}></span>
+              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#1B2545]" : "bg-white"}`}></span>
+              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#1B2545]" : "bg-white"}`}></span>
+              <span className={`block w-6 h-0.5 transition-colors duration-300 ${isScrolled ? "bg-[#1B2545]" : "bg-white"}`}></span>
             </button>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function Navbar() {
         <div
           className="fixed inset-0 z-[60] flex flex-col"
           style={{
-            background: 'rgba(46, 58, 110, 0.92)',
+            background: 'rgba(27, 37, 69, 0.95)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
           }}
@@ -145,7 +145,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white text-2xl font-medium hover:text-[#5672C4] transition-colors duration-200"
+                className="text-white text-2xl font-medium hover:text-[#00C2FF] transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -157,7 +157,7 @@ export default function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 btn-primary bg-[#5672C4] text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-[#4561AE]"
+              className="mt-4 btn-primary bg-[#00C2FF] text-white text-lg font-semibold px-8 py-3 rounded-lg hover:bg-[#00A3D9]"
               onClick={() => setIsOpen(false)}
             >
               Agendar Cita

@@ -37,11 +37,21 @@ import { testimonials } from "../data/testimonials";
           {testimonials.map((t) => (
             <TestimonialCard
               name={t.name}
-              role={t.role}
               quote={t.quote}
               rating={t.rating}
+              date={t.date}
             />
           ))}
+        </div>
+        <div class="text-center mt-10">
+          <a
+            href="https://www.google.com/maps/place/Fisioterapia+en+Panam%C3%A1+-+FisioMed+Therapy+Center/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="arrow-link text-accent hover:text-accent-dark font-semibold transition-colors duration-200"
+          >
+            Ver todas las resenas en Google <span class="arrow">&rarr;</span>
+          </a>
         </div>
       </div>
     </section>
