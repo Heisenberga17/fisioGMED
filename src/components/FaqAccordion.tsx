@@ -27,8 +27,7 @@ export default function FaqAccordion() {
               aria-expanded={isOpen}
             >
               <span
-                className="text-lg text-navy font-medium"
-                style={{ fontFamily: "'DM Serif Display', serif" }}
+                className="text-lg text-navy font-semibold"
               >
                 {faq.question}
               </span>

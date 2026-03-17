@@ -10,33 +10,28 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 const teamMembers = [
   {
     name: "Lic. Eric Arosemena",
-    role: "Fisioterapeuta — Director Clínico",
+    role: "Fisioterapeuta",
     bio: "Licenciado en Fisioterapia con más de 15 años de experiencia. Magíster en Readaptación Deportiva. Actualmente Fisioterapeuta de la Selección Mayor de Fútbol de Panamá. Comprometido con la excelencia clínica y el cuidado personalizado de cada paciente.",
-    isLead: true,
   },
   {
     name: "Dr. Luis Sevillano Gerona",
     role: "Ortopedia y Traumatología Deportiva",
     bio: "Ortopedia y Traumatología Deportiva. Cirugía Artroscópica de Hombro y Rodilla.",
-    isLead: false,
   },
   {
     name: "Lic. Betzaida Santos",
     role: "Fisioterapeuta",
     bio: "Fisioterapeuta.",
-    isLead: false,
   },
   {
     name: "Lic. Arturo Ah Chong",
     role: "Fisioterapeuta",
     bio: "Fisioterapeuta.",
-    isLead: false,
   },
   {
     name: "Lic. Karen León",
     role: "Nutricionista Deportiva",
     bio: "Nutricionista Deportiva.",
-    isLead: false,
   },
 ];
 
@@ -71,35 +66,21 @@ const philosophyItems = [
       subtitle="Profesionales dedicados a tu bienestar y recuperación"
     />
 
-    <!-- Lead Doctor -->
-    <section class="py-16 bg-light-bg">
-      <div class="max-w-7xl mx-auto px-4">
-        <TeamCard
-          name={teamMembers[0].name}
-          role={teamMembers[0].role}
-          bio={teamMembers[0].bio}
-          isLead={true}
-        />
-      </div>
-    </section>
-
     <!-- Team Grid -->
     <section class="py-16 bg-ice">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-12 scroll-reveal">
-          <p class="text-accent text-sm font-semibold uppercase tracking-widest font-body mb-3">Especialistas</p>
           <h2 class="text-3xl md:text-4xl font-heading text-navy mb-4">
             Nuestro Equipo de Especialistas
           </h2>
           <div class="accent-bar mx-auto mt-4 mb-4"></div>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.slice(1).map((member) => (
+          {teamMembers.map((member) => (
             <TeamCard
               name={member.name}
               role={member.role}
               bio={member.bio}
-              isLead={false}
             />
           ))}
         </div>

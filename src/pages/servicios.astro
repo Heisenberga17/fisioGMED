@@ -91,15 +91,15 @@ const technology = [
     ))}
 
     <!-- Tecnología de Recuperación Avanzada -->
-    <section class="py-16 relative overflow-hidden" style="background: linear-gradient(180deg, #2E3A6E 0%, #374485 100%);">
+    <section class="py-16 relative overflow-hidden" style="background: linear-gradient(180deg, #1B2545 0%, #2A3A6B 100%);">
       <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 24px 24px;"></div>
       <div class="max-w-7xl mx-auto px-4 relative z-10">
         <div class="text-center mb-12">
-          <p class="text-sand text-sm font-semibold uppercase tracking-widest font-body mb-3">Tecnología</p>
+          <p class="text-[#00C2FF] text-sm font-semibold uppercase tracking-widest font-body mb-3">Tecnología</p>
           <h2 class="text-3xl md:text-4xl font-heading text-white mb-4">
             Tecnología de Recuperación Avanzada
           </h2>
-          <div class="w-20 h-1 bg-gradient-to-r from-accent via-sand to-accent rounded-full mx-auto mb-6"></div>
+          <div class="w-20 h-1 bg-gradient-to-r from-accent via-[#00A3D9] to-accent rounded-full mx-auto mb-6"></div>
           <p class="text-slate-blue text-lg font-body max-w-2xl mx-auto">
             Equipos de última generación para acelerar tu recuperación
           </p>
@@ -107,7 +107,7 @@ const technology = [
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {technology.map((tech) => (
             <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/15 transition-colors duration-300">
-              <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-sand">
+              <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-[#00C2FF]">
                 <Fragment set:html={tech.icon} />
               </div>
               <h3 class="font-heading text-white text-lg mb-2">{tech.name}</h3>

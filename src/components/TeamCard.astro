@@ -3,53 +3,29 @@ interface Props {
   name: string;
   role: string;
   bio: string;
-  isLead?: boolean;
 }
 
-const { name, role, bio, isLead = false } = Astro.props;
+const { name, role, bio } = Astro.props;
 
 // Get initials for styled placeholder
 const initials = name.split(' ').filter(w => w.length > 1).slice(0, 2).map(w => w[0]).join('');
 ---
 
-{isLead ? (
-  <div class="scroll-reveal lg:col-span-2 bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <!-- Styled Placeholder Image -->
-      <div class="bg-gradient-to-br from-navy to-navy-light h-64 md:h-full min-h-[16rem] flex items-center justify-center">
-        <div class="text-center">
-          <div class="w-24 h-24 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
-            <span class="text-3xl font-heading text-white">{initials}</span>
-          </div>
-          <p class="text-white/60 mt-2 text-sm">Foto próximamente</p>
-        </div>
+<div class="scroll-reveal stagger-item bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-navy/[0.06]">
+  <!-- Styled Placeholder Image -->
+  <div class="bg-gradient-to-br from-navy/80 to-slate-blue h-64 flex items-center justify-center">
+    <div class="text-center">
+      <div class="w-20 h-20 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
+        <span class="text-2xl font-heading text-white">{initials}</span>
       </div>
-
-      <!-- Info -->
-      <div class="p-8 flex flex-col justify-center">
-        <p class="text-accent font-medium text-sm uppercase tracking-wider">{role}</p>
-        <h3 class="text-2xl font-heading text-navy mt-1">{name}</h3>
-        <p class="text-body mt-3 leading-relaxed">{bio}</p>
-      </div>
+      <p class="text-white/60 mt-2 text-sm">Foto próximamente</p>
     </div>
   </div>
-) : (
-  <div class="scroll-reveal stagger-item bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-    <!-- Styled Placeholder Image -->
-    <div class="bg-gradient-to-br from-navy/80 to-slate-blue h-64 flex items-center justify-center">
-      <div class="text-center">
-        <div class="w-20 h-20 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center mx-auto mb-3">
-          <span class="text-2xl font-heading text-white">{initials}</span>
-        </div>
-        <p class="text-white/60 mt-2 text-sm">Foto próximamente</p>
-      </div>
-    </div>
 
-    <!-- Info -->
-    <div class="p-6">
-      <p class="text-accent font-medium text-sm uppercase tracking-wider">{role}</p>
-      <h3 class="text-xl font-heading text-navy mt-1">{name}</h3>
-      <p class="text-body mt-2">{bio}</p>
-    </div>
+  <!-- Info -->
+  <div class="p-6">
+    <p class="text-accent font-medium text-sm uppercase tracking-wider">{role}</p>
+    <h3 class="text-xl font-heading text-navy mt-1">{name}</h3>
+    <p class="text-body mt-2">{bio}</p>
   </div>
-)}
+</div>
