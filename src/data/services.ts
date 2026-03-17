@@ -136,18 +136,18 @@ export const services: Service[] = [
   },
   {
     id: "nutricion-deportiva",
-    name: "Nutrición Deportiva",
+    name: "Nutrición Deportiva e InBody",
     shortDescription:
-      "Asesoría personalizada para optimizar rendimiento y reparación muscular.",
+      "Atención nutricional personalizada con evaluación de composición corporal InBody.",
     fullDescription:
-      "Nuestro servicio de nutrición deportiva complementa tu rehabilitación y entrenamiento con un enfoque integral. Mediante control de macros y micronutrientes, diseñamos un plan de alimentación totalmente personalizado para optimizar tu rendimiento deportivo, acelerar la reparación muscular y alcanzar tus objetivos de composición corporal.",
+      "Nuestro servicio de nutrición deportiva incluye evaluación de composición corporal con tecnología InBody, que mide con precisión tu porcentaje de masa muscular, masa grasa, peso y talla. La Lic. Karen León interpreta tus resultados y diseña un plan nutricional personalizado para optimizar tu rendimiento, acelerar la recuperación de lesiones y mejorar tu composición corporal.",
     icon: "🥗",
     treatments: [
-      "Control de macronutrientes y micronutrientes",
+      "Evaluación de composición corporal InBody con interpretación",
+      "Evaluación de peso, talla, % masa muscular y % masa grasa",
       "Plan nutricional personalizado",
-      "Evaluación de composición corporal",
-      "Nutrición para recuperación de lesiones",
-      "Suplementación deportiva guiada",
+      "Recomendaciones de cambios de hábitos para mejorar composición corporal",
+      "Nutrición para recuperación de lesiones y rendimiento deportivo",
     ],
     category: "rendimiento",
   },
