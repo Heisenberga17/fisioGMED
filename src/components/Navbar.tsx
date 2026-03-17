@@ -70,8 +70,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`nav-link-animated text-sm font-medium transition-colors duration-200 ${
                     isScrolled
-                      ? "text-[#2E3A6E] hover:text-[#E87F35]"
-                      : "text-white hover:text-[#E87F35]"
+                      ? "text-[#2E3A6E] hover:text-[#5672C4]"
+                      : "text-white hover:text-[#5672C4]"
                   }`}
                 >
                   {link.label}
@@ -83,7 +83,7 @@ export default function Navbar() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary bg-[#E87F35] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#D06A20]"
+                className="btn-primary bg-[#5672C4] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#4561AE]"
               >
                 Agendar Cita
               </a>
@@ -145,7 +145,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white text-2xl font-medium hover:text-[#E87F35] transition-colors duration-200"
+                className="text-white text-2xl font-medium hover:text-[#5672C4] transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -157,7 +157,7 @@ export default function Navbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 btn-primary bg-[#E87F35] text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-[#D06A20]"
+              className="mt-4 btn-primary bg-[#5672C4] text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-[#4561AE]"
               onClick={() => setIsOpen(false)}
             >
               Agendar Cita
